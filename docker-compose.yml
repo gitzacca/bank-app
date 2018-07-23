@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  accounts:
+    image: accounts:latest
+    ports:
+      - 8081:8081
+
+  transactios:
+    image: transactions:latest
+    ports:
+          - 8080:8080

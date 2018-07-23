@@ -24,6 +24,15 @@ jar {
 	version = '1.0'
 }
 
+def javaVersion = JavaVersion.VERSION_1_8
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
 group = 'br.com.pismo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
