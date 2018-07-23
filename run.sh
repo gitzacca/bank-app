@@ -9,10 +9,12 @@ echo $r
 
 # Accounts
 cd $r/accounts
+chmod +x gradlew
 echo "Starting accounts service..."
-./gradlew bootRun &
+./gradlew bootRun
 
 # Transactions
 echo "Starting Tranasctions Service..."
 cd $r/transactions
-./gradlew bootRun &
+chmod +x gradlew
+./gradlew bootRun
