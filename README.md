@@ -16,10 +16,10 @@ Application -> Domain -> External
 
 A aplicação foi desenvolvida para que seja iniciada da forma mais simples possível, basta seguir os passos:
 
- * Checkout dos projetos: `git clone https://github.com/gitzacca/accounts.git` e `git clone https://github.com/gitzacca/transactions.git`
+ * Checkout do projeto: `git clone https://github.com/gitzacca/bank-app.git`
 
 
-Para executar a aplicação execute o comando: `sh run.sh` no diretório do projeto transactions. (É necessário ter o java 8 instalado)
+Para executar a aplicação execute o comando: `sh run.sh` no diretório do projeto bank-app. (É necessário ter o java 8 instalado)
 
 Os microserviços estarão disponivel nos seguintes endereços:
 
