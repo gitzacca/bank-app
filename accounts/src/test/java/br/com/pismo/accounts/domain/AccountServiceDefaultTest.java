@@ -45,6 +45,7 @@ public class AccountServiceDefaultTest {
         Account account = new Account(creditLimit, withdrawalLimit);
 
         Mockito.when(accountRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(account));
+        Mockito.when(accountRepository.save(Mockito.any(Account.class))).then(invocation -> invocation.getArguments()[0]);
 
         Account accountChanged = service.changeLimits(1L,
                 new CreditLimit(new BigDecimal(100.00)),
@@ -61,6 +62,7 @@ public class AccountServiceDefaultTest {
         Account account = new Account(creditLimit, withdrawalLimit);
 
         Mockito.when(accountRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(account));
+        Mockito.when(accountRepository.save(Mockito.any(Account.class))).then(invocation -> invocation.getArguments()[0]);
 
         Account accountChanged = service.changeLimits(1L,
                 new CreditLimit(new BigDecimal(-100.00)),
