@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 set -e
 
 cd `dirname $0`
@@ -10,11 +9,13 @@ echo $r
 # Accounts
 cd $r/accounts
 chmod +x gradlew
-echo "Starting accounts service..."
-./gradlew bootRun &
+./gradlew build &
 
 # Transactions
-echo "Starting Tranasctions Service..."
 cd $r/transactions
 chmod +x gradlew
-./gradlew bootRun &
+./gradlew build &
+
+cd $r
+
+docker-compose up
