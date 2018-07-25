@@ -78,12 +78,12 @@ public class TransactionServiceDefault implements TransactionService {
                     break;
 
                 } else {
-                    transactionToBePaid.setBalance(new BigDecimal(0));
-                    PaymentTracking paymentTracking = new PaymentTracking(paymentTransaction.getId(), transactionToBePaid.getId(), transactionToBePaid.getAmount().negate());
+                    PaymentTracking paymentTracking = new PaymentTracking(paymentTransaction.getId(), transactionToBePaid.getId(), transactionToBePaid.getBalance().negate());
                     paymentsTracking.add(paymentTracking);
                     payment.setAmount(balance);
-                    changeAvailableCredit(payment.getAccountId(), transactionToBePaid.getOperation(), transactionToBePaid.getAmount());
+                    changeAvailableCredit(payment.getAccountId(), transactionToBePaid.getOperation(), transactionToBePaid.getBalance().negate());
                     paymentTransaction.setBalance(balance);
+                    transactionToBePaid.setBalance(new BigDecimal(0));
                 }
 
 
